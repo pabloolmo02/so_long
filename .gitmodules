@@ -1,0 +1,9 @@
+[submodule "libs/ft_printf"]
+	path = libs/ft_printf
+	url = git@github.com:pabloolmo02/PRINTF.git
+[submodule "libs/libft"]
+	path = libs/libft
+	url = git@github.com:pabloolmo02/LIBFT.git
+[submodule "libs/get_next_line"]
+	path = libs/get_next_line
+	url = git@github.com:pabloolmo02/GET_NEXT_LINE.git
