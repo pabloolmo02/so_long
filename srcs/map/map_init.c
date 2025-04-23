@@ -6,12 +6,30 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:09:19 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/16 17:41:39 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/04/23 18:06:33 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
 
+void parse_map(t_g *g, char *map_file, int i)
+{
+	i = 0;
+	init_struct_values(g);
+	valid_format(map_file, g);
+	g->map = make_matrix(map_file, g, i);
+	if(!g->map)
+		ft_printerrors("map error 1\n", g->map, g->map_copy);
+	g->map_copy = make_matrix(map_file, g, i);
+	if(!g->map_copy)
+	ft_printerrors("map error 2\n", g->map, g->map_copy);
+	map_characther(g);
+	check_content(g);
+	save_player_pos(g);
+	flood_fill(g, (g->y), (g->x));
+	valid_flood_fill(g);
+	
+}
 void init_struct_values(t_g *g)
 {
 	g->collect = 0;
@@ -29,16 +47,32 @@ void init_struct_values(t_g *g)
 	g->name_map = '\0';
 
 }
-char **make_matrix(char *map_name, t_g *g, int i)
+char **make_matrix(char *map_file, t_g *g, int i)
 {
 	char **matrix;
 	char *matrix_line;
 	int fd;
 	
-	fd = open(map_name, O_RDONLY);
+	fd = open(map_file, O_RDONLY);
 	if (not_fd(fd))
 		return(NULL);
-	matrix = malloc(sizeof(char *) * (count_lines(map_name, g) + 1));
+	matrix = malloc(sizeof(char *) * (count_lines(map_file, g) + 1));
+	if(!matrix)
+		ft_printerrors("memory fail in matrix\n", g->map, g->map_copy);
+	matrix_line = get_next_line(fd);
+	if(!matrix_line)
+		ft_printerrors("memory fail in matrix\n", g->map, g->map_copy);
+	while(matrix_line)
+	{
+		matrix[i] = ft_strdup(matrix_line);
+		free(matrix_line);
+		matrix_line = get_next_line(fd);
+		i++;
+	}
+	g->height = i;
+	matrix[i] = NULL;
+	free(matrix_line);
+	return(matrix);
 }
 
 int	count_lines(char *path, t_g *g)
