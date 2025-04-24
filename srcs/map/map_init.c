@@ -6,7 +6,7 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:09:19 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/24 13:55:14 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:22:34 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ void parse_map(t_g *g, char *map_file, int i)
 	if(!g->map_copy)
 	ft_printerrors("map error 2\n", g->map, g->map_copy);
 	map_chars(g);
-	check_content(g);
-	save_player_pos(g);
+	check_dimension_and_content(g);
+	player_possition(g);
 	flood_fill(g, (g->y), (g->x));
 	valid_flood_fill(g);
 	
@@ -101,4 +101,27 @@ int	count_lines(char *path, t_g *g)
 	free(line);
 	line = NULL;
 	return (i);
+}
+void player_possition(t_g *g)
+{
+	int i;
+	int j;
+	
+	i = 0;
+	if(g->player != 1)
+		ft_printerrors("Wrong player number\n", g->map, g->map_copy);
+	while(i < g->height)
+	{
+		j = 0;
+		while(g->map[i][j] != '\0')
+		{
+			if(g->map[i][j] == 'P')
+			{
+				g->x = j;
+				g->y = i;
+			}
+			j++;
+		}
+		i++;
+	}	
 }

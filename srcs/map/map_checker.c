@@ -6,11 +6,21 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:05:48 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/24 13:55:07 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/04/24 15:32:07 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "includes/so_long.h"
+
+void check_dimension_and_content(t_g *g)
+{
+	if(g->height < 3 || g->width < 6)
+		ft_printerrors("Wrong map size", g->map, g->map_copy);
+	if (g->collect < 1)
+		ft_printerrors("Wrong collect number", g->map, g->map_copy);
+	if (g->exit != 1)
+		ft_printerrors("Wrong exit number", g->map, g->map_copy);
+}
 
 int map_line_checker(t_g *g, int i)
 {
@@ -50,7 +60,8 @@ int map_chars(t_g *g)
 		if(!map_line_checker(g, i))
 			return (0);
 		i++;
-	}	
+	}
+	return (1);
 }
 //verificamos que el nombre del mapa es correcto y le asignamos su valor en la estructura: g->name_map = map_name;
 void valid_format(char *map_name, t_g *g)
