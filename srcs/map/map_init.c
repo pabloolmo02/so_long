@@ -6,7 +6,7 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:09:19 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/23 18:06:33 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/04/24 13:55:14 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void parse_map(t_g *g, char *map_file, int i)
 	g->map_copy = make_matrix(map_file, g, i);
 	if(!g->map_copy)
 	ft_printerrors("map error 2\n", g->map, g->map_copy);
-	map_characther(g);
+	map_chars(g);
 	check_content(g);
 	save_player_pos(g);
 	flood_fill(g, (g->y), (g->x));

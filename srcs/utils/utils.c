@@ -6,7 +6,7 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 17:42:38 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/23 18:05:17 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/04/24 13:31:35 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ int	ft_strlen_sl(char *s)
 	return (i);
 }
 
-void	check_one(char *str, t_g *g)
+void	check_start_and_final_line(char *str, t_g *g)
 {
 	int	i;
 
