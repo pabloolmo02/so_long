@@ -6,11 +6,11 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:05:48 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/24 15:32:07 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/05/06 17:13:25 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "so_long.h"
 
 void check_dimension_and_content(t_g *g)
 {
@@ -63,7 +63,6 @@ int map_chars(t_g *g)
 	}
 	return (1);
 }
-//verificamos que el nombre del mapa es correcto y le asignamos su valor en la estructura: g->name_map = map_name;
 void valid_format(char *map_name, t_g *g)
 {
 	int len;

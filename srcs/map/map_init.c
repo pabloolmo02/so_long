@@ -6,11 +6,11 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 15:09:19 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/04/24 15:22:34 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/05/06 17:13:14 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "includes/so_long.h"
+#include "so_long.h"
 
 void parse_map(t_g *g, char *map_file, int i)
 {
