@@ -6,11 +6,11 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 17:42:38 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/05/06 17:13:04 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/05/12 12:11:07 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 int	ft_strlen_sl(char *s)
 {

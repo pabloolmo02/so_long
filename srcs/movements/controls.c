@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:51:41 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/05/06 17:12:35 by polmo-lo         ###   ########.fr       */
+/*   Created: 2025/05/06 14:46:35 by polmo-lo          #+#    #+#             */
+/*   Updated: 2025/05/12 13:39:08 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 void	move_up(t_g *g)
 {
@@ -23,7 +23,7 @@ void	move_up(t_g *g)
 			mlx_image_to_window(g->mlx, g->img_f,
 				g->x * PIXEL, g->y * PIXEL);
 			mlx_delete_image(g->mlx, g->img_p);
-			g->texture = mlx_load_png("images/player.png");
+			g->texture = mlx_load_png("assets/player.png");
 			if (!g->texture)
 				ft_printerrors("loading player texture", g->map, g->map_copy);
 			g->img_p = mlx_texture_to_image(g->mlx, g->texture);
@@ -51,7 +51,7 @@ void	move_down(t_g *g)
 			g->map[g->y][g->x] = '0';
 			mlx_image_to_window(g->mlx, g->img_f, g->x * PIXEL, g->y * PIXEL);
 			mlx_delete_image(g->mlx, g->img_p);
-			g->texture = mlx_load_png("images/player.png");
+			g->texture = mlx_load_png("assets/player.png");
 			if (!g->texture)
 				ft_printerrors("loading player texture", g->map, g->map_copy);
 			g->img_p = mlx_texture_to_image(g->mlx, g->texture);
@@ -79,7 +79,7 @@ void	move_right(t_g *g)
 			g->map[g->y][g->x] = '0';
 			mlx_image_to_window(g->mlx, g->img_f, g->x * PIXEL, g->y * PIXEL);
 			mlx_delete_image(g->mlx, g->img_p);
-			g->texture = mlx_load_png("images/player.png");
+			g->texture = mlx_load_png("assets/player.png");
 			if (!g->texture)
 				ft_printerrors("loading player texture", g->map, g->map_copy);
 			g->img_p = mlx_texture_to_image(g->mlx, g->texture);
@@ -107,7 +107,7 @@ void	move_left(t_g *g)
 			g->map[g->y][g->x] = '0';
 			mlx_image_to_window(g->mlx, g->img_f, g->x * PIXEL, g->y * PIXEL);
 			mlx_delete_image(g->mlx, g->img_p);
-			g->texture = mlx_load_png("images/player.png");
+			g->texture = mlx_load_png("assets/player.png");
 			if (!g->texture)
 				ft_printerrors("loading player texture", g->map, g->map_copy);
 			g->img_p = mlx_texture_to_image(g->mlx, g->texture);
@@ -124,4 +124,3 @@ void	move_left(t_g *g)
 		ft_printf("Moves: %d\n", g->moves);
 	}
 }
-

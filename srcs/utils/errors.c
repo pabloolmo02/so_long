@@ -6,11 +6,11 @@
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/16 16:52:23 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/05/06 17:12:08 by polmo-lo         ###   ########.fr       */
+/*   Updated: 2025/05/12 13:40:19 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "includes/so_long.h"
 
 char	**ft_free_map(char **map)
 {

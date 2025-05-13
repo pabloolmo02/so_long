@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:52:23 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/05/06 17:13:43 by polmo-lo         ###   ########.fr       */
+/*   Created: 2025/05/06 14:45:06 by polmo-lo          #+#    #+#             */
+/*   Updated: 2025/05/12 13:24:37 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../../includes/so_long.h"
 
 void	init_mlx_g(t_g *g)
 {

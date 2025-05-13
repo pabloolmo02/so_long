@@ -5,12 +5,12 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: polmo-lo <polmo-lo@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/16 16:52:23 by polmo-lo          #+#    #+#             */
-/*   Updated: 2025/05/06 17:13:57 by polmo-lo         ###   ########.fr       */
+/*   Created: 2025/05/06 15:53:08 by polmo-lo          #+#    #+#             */
+/*   Updated: 2025/05/12 12:21:54 by polmo-lo         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "so_long.h"
+#include "../includes/so_long.h"
 
 int	main(int argc, char *argv[])
 {
@@ -28,4 +28,5 @@ int	main(int argc, char *argv[])
 	init_mlx_g(&g);
 	g.map = ft_free_map(g.map);
 	ft_free_map(g.map_copy);
+	return (0);
 }
